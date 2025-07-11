@@ -1,0 +1,14 @@
+import csv
+
+fichero = open("chocolate.csv",'r')
+
+contenido = csv.DictReader(fichero, delimiter=',')
+lista = []
+for linea in contenido:
+    if linea["Company"] not in lista:
+        lista.append(linea["Company"])
+
+for i in lista:
+    print(i)
+
+fichero.close()
